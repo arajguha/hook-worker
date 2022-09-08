@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/arajguha/hook-worker#readme",
   "dependencies": {
+    "@socket.io/cluster-adapter": "^0.2.0",
+    "@socket.io/sticky": "^1.0.1",
     "amqplib": "^0.10.3",
+    "cluster": "^0.7.7",
     "dotenv-safe": "^8.2.0",
     "get-value": "^3.0.1",
     "set-value": "^4.1.0",
