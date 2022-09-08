@@ -1,4 +1,4 @@
-const { messageQueue, queueName } = require("./config/vars");
+const { messageQueue, queueName } = require("../config/vars");
 
 const consumeAndForward = async (io) => {
     const channel = messageQueue.channel;

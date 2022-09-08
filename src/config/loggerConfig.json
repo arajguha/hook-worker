@@ -1,0 +1,23 @@
+{
+    "disableClustering": true,
+    "appenders": {
+      "fileLog": {
+        "category": "combined_log",
+        "type": "dateFile",
+        "filename": "./logs/combined.log",
+        "flag": "w",
+        "daysToKeep": 14
+      },
+      "console": {
+        "type": "console"
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": [
+          "fileLog"
+        ],
+        "level": "ALL"
+      }
+    }
+  }

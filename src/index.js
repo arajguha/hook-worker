@@ -6,7 +6,7 @@ const { Server } = require('socket.io');
 const { setupMaster, setupWorker } = require('@socket.io/sticky');
 const { createAdapter, setupPrimary } = require('@socket.io/cluster-adapter');
 const { port } = require('./config/vars');
-const { consumeAndForward } = require('./worker');
+const { consumeAndForward } = require('./utils/worker');
 
 const setUpWorkerProcess = async () => {
     await rabbitMQ.connect();
