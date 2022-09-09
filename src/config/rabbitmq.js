@@ -1,5 +1,6 @@
 const amqplib = require('amqplib');
 const set = require('set-value');
+const logger = require('../utils/logger');
 const { messageQueue, queueName } = require('./vars');
 
 const connect = async () => {
@@ -10,10 +11,10 @@ const connect = async () => {
         set(messageQueue, 'connection', connection);
         set(messageQueue, 'channel', channel);
 
-        console.log('rabbitMQ connection has been setup');
+        logger.info('rabbitMQ connection has been setup');
 
     } catch (error) {
-        console.log('error while connecting to rabbitmq ', error);
+        logger.error('error while connecting to rabbitmq ', error);
         process.exit(-1);
     }
 };
