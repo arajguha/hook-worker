@@ -8,5 +8,6 @@ module.exports = {
         host: process.env.RABBIT_MQ_HOST || 'localhost',
         port: process.env.RABBIT_MQ_PORT || 5672,
     },
-    queueName: process.env.QUEUE_NAME || 'webhook_tasks'
+    queueName: process.env.QUEUE_NAME || 'webhook_tasks',
+    env: process.env.NODE_ENV || 'production'
 };

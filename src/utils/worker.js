@@ -1,18 +1,19 @@
-const { messageQueue, queueName } = require("./config/vars");
+const { messageQueue, queueName } = require("../config/vars");
+const logger = require("./logger");
 
 const consumeAndForward = async (io) => {
     const channel = messageQueue.channel;
     channel.consume(queueName, (msg) => {
         try {
             if (msg) {
-                console.log('message recieved: ', msg.content.toString());
+                logger.debug('message recieved: ', msg.content.toString());
                 io.emit('new_message', msg.content.toString());
                 channel.ack(msg);
             } else {
-                console.log('Consumer cancelled by server');
+                logger.info('Consumer cancelled by server');
             }
         } catch (error) {
-            console.log('something went wrong ', error.message);
+            logger.error('something went wrong ', error.message);
         }
     });
 };
