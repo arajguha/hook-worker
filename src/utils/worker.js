@@ -13,6 +13,7 @@ const consumeAndForward = async (io) => {
                 logger.info('Consumer cancelled by server');
             }
         } catch (error) {
+            console.log(error);
             logger.error('something went wrong ', error.message);
         }
     });

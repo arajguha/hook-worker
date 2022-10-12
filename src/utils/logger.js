@@ -21,7 +21,7 @@ class CustomLogger {
     }
 
     debug (logData) {
-        this.debug.info(`${this.prefix} ${logData}`);
+        this.logger.debug(`${this.prefix} ${logData}`);
     }
 
     error (logData) {
